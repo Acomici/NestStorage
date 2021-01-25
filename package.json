@@ -1,6 +1,6 @@
 {
-  "name": "@acomici/neststorage",
-  "version": "0.0.3",
+  "name": "@acomici/nest-storage",
+  "version": "0.0.1",
   "description": "Multi disk multi driver storage manager for NestJS 💿💾",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,11 +9,13 @@
     "nestjs-filesystem"
   ],
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/Acomici/NestStorage.git"
   },
   "bugs": {
     "url": "https://github.com/Acomici/NestStorage"
   },
+  "url": "https://github.com/Acomici/NestStorage.git",
   "homepage": "https://github.com/Acomici/NestStorage",
   "author": "Vinayak Sarawagi <vinayaksarawagi25@gmail.com>",
   "private": false,
