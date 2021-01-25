@@ -16,13 +16,19 @@ export class StorageService {
     StorageService.driverManager = new DriverManager();
   }
 
-  static getDriver(disk: string): StorageDriver {
-    if (StorageService.diskDrivers[disk]) {
-      return StorageService.diskDrivers[disk];
+  static getDriver(disk?: string): StorageDriver {
+    const selectedDisk = disk || this.options.default;
+
+    if(!selectedDisk) {
+      throw new Error('Please set option default for disk name');
     }
 
-    const driver = StorageService.newDriver(disk);
-    StorageService.diskDrivers[disk] = driver;
+    if (StorageService.diskDrivers[selectedDisk]) {
+      return StorageService.diskDrivers[selectedDisk];
+    }
+
+    const driver = StorageService.newDriver(selectedDisk);
+    StorageService.diskDrivers[selectedDisk] = driver;
     return driver;
   }
 

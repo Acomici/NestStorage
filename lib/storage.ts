@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class Storage {
-  static disk(disk: string) {
+  static disk(disk?: string) {
     return StorageService.getDriver(disk);
   }
 }
